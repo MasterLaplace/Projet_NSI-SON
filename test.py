@@ -96,26 +96,31 @@ class Module:
 		return self.Liste
 	
     def compression(self):
-    	for i in range(len(Liste)):
-        	if Liste:
+    	for i in range(len(self.Liste)):
+        	if self.Liste:
             	i = 0
         	else:
             	break
-        	for j in range(len(Liste)):
-            	if Liste[j] <= Liste[i] + 5 or Liste[j] <= Liste[i] - 5:
-                	if Liste[j] == Liste[-1]:
-                    	Liste_inter = Liste_inter + [Liste[-1]]
-                    	del Liste[i:j+1]
+        	for j in range(len(self.Liste)):
+            	if self.Liste[j] <= self.Liste[i] + 5 or self.Liste[j] <= self.Liste[i] - 5:
+                	if self.Liste[j] == self.Liste[-1]:
+                    	self.Liste_inter = self.Liste_inter + [self.Liste[-1]]
+                    	del self.Liste[i:j+1]
                 	else:
-                    	Liste_inter=Liste_inter + [Liste[j]]
+                    	self.Liste_inter = self.Liste_inter + [self.Liste[j]]
             	else:
-                	nbr_multiple = len(Liste_inter)
-                	for n in range(len(Liste_inter)):
-                    	if Liste_inter == False:
+                	nbr_multiple = len(self.Liste_inter)
+                	for n in range(len(self.Liste_inter)):
+                    	if self.Liste_inter == False:
                         	break
                     	else:
-                        	Liste_inter.pop()
-                	Liste_final = Liste_final + ["{nbr_multiple}x{Liste[i]}"]
-                	del Liste[i:j]
+                        	self.Liste_inter.pop()
+                	self.Liste_final = self.Liste_final + [f"{nbr_multiple}x{self.Liste[i]}"]
+                	del self.Liste[i:j]
                		break
         return self.Liste, self.Liste_final
+
+test=Module()
+test.marche_module()
+test.supr()
+test.compression()
