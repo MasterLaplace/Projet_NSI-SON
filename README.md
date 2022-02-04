@@ -8,7 +8,7 @@ comment passer d'un son analogique en numérique compressé
 
 comment récupérer des données sécuriser
 - Le [parcour 2](https://pickled-victorious-prepared.glitch.me/footer) à pour but de sécuriser l'envoi des données compresser de la carte au site, par une méthode de cryptage type **XOR**.
-- 
+
 -------------------
 
 \ ゜o゜)ノ
